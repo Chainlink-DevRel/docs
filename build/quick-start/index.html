@@ -1,0 +1,1157 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Specs, docs, guides, and APIs for the Ceramic Network.">
+      
+      
+      
+      
+        <link rel="canonical" href="https://developers.ceramic.network/build/quick-start/">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Quick Start - Ceramic Developers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MP8QDL3LWK"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-MP8QDL3LWK');
+</script>
+
+    
+  
+  
+    
+  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quick Start | Ceramic Developers" />
+  <meta property="og:description" content="Specs, docs, guides, and APIs for the Ceramic Network." />
+  <meta property="og:url" content="https://developers.ceramic.network/build/quick-start/" />
+  <meta property="og:image" content="https://developers.ceramic.network/images/image-ceramic-opengraph.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ceramicnetwork" />
+  <meta name="twitter:creator" content="@ceramicnetwork" />
+  <meta name="twitter:title" content="Quick Start | Ceramic Developers" />
+  <meta name="twitter:description" content="Specs, docs, guides, and APIs for the Ceramic Network." />
+  <meta name="twitter:image" content="https://developers.ceramic.network/images/image-ceramic-opengraph.png" />
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://developers.ceramic.network" title="Ceramic Developers" class="md-header-nav__button md-logo" aria-label="Ceramic Developers">
+      
+  <img src="../../images/ceramic-no-shadow.png" alt="logo" />
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Ceramic Developers
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Quick Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/ceramicnetwork/js-ceramic/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ceramicnetwork/js-ceramic
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+        
+      
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Build
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../../reference/javascript/clients/" class="md-tabs__link">
+        Reference
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  <li class="md-tabs__item">
+    <a href="https://chat.ceramic.network" class="md-tabs__link">
+      Chat
+    </a>
+  </li>
+
+      
+        
+  <li class="md-tabs__item">
+    <a href="https://blog.ceramic.network" class="md-tabs__link">
+      Blog
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://developers.ceramic.network" title="Ceramic Developers" class="md-nav__button md-logo" aria-label="Ceramic Developers">
+      
+  <img src="../../images/ceramic-no-shadow.png" alt="logo" />
+
+    </a>
+    Ceramic Developers
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ceramicnetwork/js-ceramic/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ceramicnetwork/js-ceramic
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      
+      <label class="md-nav__link" for="nav-1">
+        Build
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Build" data-md-level="1">
+        <label class="md-nav__title" for="nav-1">
+          <span class="md-nav__icon md-icon"></span>
+          Build
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quick Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quick Start
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-cli" class="md-nav__link">
+    Install the CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-daemon" class="md-nav__link">
+    Start the daemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-document" class="md-nav__link">
+    Create a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-a-document" class="md-nav__link">
+    Query a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-document" class="md-nav__link">
+    Update a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-schema" class="md-nav__link">
+    Create a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-document-that-uses-a-schema" class="md-nav__link">
+    Create a document that uses a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-the-document-you-created" class="md-nav__link">
+    Query the document you created
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication/" class="md-nav__link">
+        Authentication
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writes/" class="md-nav__link">
+        Writes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queries/" class="md-nav__link">
+        Queries
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pinning/" class="md-nav__link">
+        Pinning
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../share/" class="md-nav__link">
+        Share your work
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" data-md-state="indeterminate" type="checkbox" id="nav-2" checked>
+      
+      <label class="md-nav__link" for="nav-2">
+        Reference
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Reference" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" data-md-state="indeterminate" type="checkbox" id="nav-2-1" checked>
+      
+      <label class="md-nav__link" for="nav-2-1">
+        JavaScript
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="JavaScript" data-md-level="2">
+        <label class="md-nav__title" for="nav-2-1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaScript
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/javascript/clients/" class="md-nav__link">
+        Clients
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/javascript/did-resolvers/" class="md-nav__link">
+        DID Resolvers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/javascript/did-providers/" class="md-nav__link">
+        DID Providers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/javascript/anchor-service/" class="md-nav__link">
+        Anchor Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/http-api/" class="md-nav__link">
+        HTTP API
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://chat.ceramic.network" class="md-nav__link">
+        Chat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://blog.ceramic.network" class="md-nav__link">
+        Blog
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-cli" class="md-nav__link">
+    Install the CLI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-daemon" class="md-nav__link">
+    Start the daemon
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-document" class="md-nav__link">
+    Create a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-a-document" class="md-nav__link">
+    Query a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-a-document" class="md-nav__link">
+    Update a document
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-schema" class="md-nav__link">
+    Create a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-document-that-uses-a-schema" class="md-nav__link">
+    Create a document that uses a schema
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-the-document-you-created" class="md-nav__link">
+    Query the document you created
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ceramicnetwork/docs/edit/main/docs/build/quick-start.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <p><img alt="" src="../../images/image-ceramic-opengraph.png" /></p>
+<div class="admonition warning">
+<p><strong>Project status: Clay testnet is now live.</strong></br><code>Clay</code> is a decentralized public network ready for experimental application development and testing, but you still may encounter a few issues.  It is the last major milestone before <code>Fire</code> mainnet, which is under development and will launch in late Q1 2021. Documents published on Clay will <em>not</em> be portable to Fire. Please <a href="https://chat.ceramic.network" target="_blank">reach out on Discord</a> or <a href="https://github.com/ceramicnetwork/js-ceramic/issues" target="_blank">create an issue on Github</a> to report any issues. Read the full announcement <a href="https://blog.ceramic.network/ceramic-network-clay-testnet/" target="_blank">here</a>.</p>
+</div>
+<p></br></p>
+<h1 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<p>Learn the basics by setting up and interacting with the Ceramic CLI. This tutorial serves as a simple introduction to Ceramic concepts. See <a href="../installation/">installation</a> to install Ceramic in your project and start building applications.</p>
+<blockquote>
+<p><strong>Want an even faster way to try Ceramic?</strong> Visit the <a href="https://playground.ceramic.dev" target="_blank">Playground demo app</a> to test the full stack of Ceramic components in the browser without needing to install anything.</p>
+</blockquote>
+<h2 id="prerequisites"><strong>Prerequisites</strong><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>This quick start guide will use a terminal, <a href="https://nodejs.org/en/" target="_blank">Node.js</a> v14, and <a href="https://www.npmjs.com/get-npm" target="_blank">npm</a> v6. Make sure to have these installed on your machine.</p>
+<h2 id="install-the-cli"><strong>Install the CLI</strong><a class="headerlink" href="#install-the-cli" title="Permanent link">&para;</a></h2>
+<p>Install the Ceramic CLI using your terminal.</p>
+<div class="highlight"><pre><span></span><code>npm install -g @ceramicnetwork/cli
+</code></pre></div>
+<h2 id="start-the-daemon"><strong>Start the daemon</strong><a class="headerlink" href="#start-the-daemon" title="Permanent link">&para;</a></h2>
+<p>Start a Ceramic daemon on your local machine and automatically connect to it on
+port 7007, <code>http://localhost:7007</code>.</p>
+<div class="highlight"><pre><span></span><code>ceramic daemon
+</code></pre></div>
+<details class="info"><summary>Node configurations</summary><p>There are multiple options you can configure when you start the ceramic daemon.</p>
+<ul>
+<li><strong>Network</strong>: By default the CLI starts a Ceramic node on the <code>clay</code> testnet. If you
+would like to use a different Ceramic network, you can specify this with the
+<code>--network</code> option.</li>
+<li><strong>Additional configurations</strong>: Use the <code>ceramic daemon -h</code> command to see additional options.</li>
+</ul>
+</details>
+<h2 id="authentication"><strong>Authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<p>By default, the Ceramic CLI is authenticated with a
+<a href="https://github.com/ceramicnetwork/key-did-provider-ed25519" target="_blank">Key DID</a>. The seed
+for this DID is stored in <code>~/.ceramic/config.json</code>. If this file is not present
+on startup a new DID will be randomly generated. It's currently not possible to
+use the Ceramic CLI with other DID methods.</p>
+<h2 id="create-a-document"><strong>Create a document</strong><a class="headerlink" href="#create-a-document" title="Permanent link">&para;</a></h2>
+<p>Use the <code>create</code> command to create a new document. In the example below
+we create a document using the <em>tile</em> doctype.</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic create tile --content <span class="s1">&#39;{ &quot;Foo&quot;: &quot;Bar&quot; }&#39;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>DocID<span class="o">(</span>kjzl6cwe1jw147ww5d8pswh1hjh686mut8v1br10dar8l9a3n1wf8z38l0bg8qa<span class="o">)</span>
+<span class="o">{</span>
+    <span class="s2">&quot;Foo&quot;</span>: <span class="s2">&quot;Bar&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p>The first line of the output is the <em>DocID</em>, which is the persistent identifier of our newly created document. This DocID will be different for you, since you created it with your DID. Below the DocID is the current content of the document.</p>
+</div>
+</div>
+</div>
+<details class="info"><summary>More options</summary><ul>
+<li><code>--controllers</code>: set the <em>controller</em> of the document</li>
+<li><code>--schema</code>: set the <em>schema</em> of the document</li>
+<li>Run <code>ceramic create -h</code> to see all available options</li>
+</ul>
+</details>
+<h2 id="query-a-document"><strong>Query a document</strong><a class="headerlink" href="#query-a-document" title="Permanent link">&para;</a></h2>
+<p>Use the <code>show</code> command to query the current state of a document. You will need to provide its <em>DocID</em>.</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic show kjzl6cwe1jw147ww5d8pswh1hjh686mut8v1br10dar8l9a3n1wf8z38l0bg8qa
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your DocID instead of the DocID included here.</p>
+</div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+    <span class="s2">&quot;Foo&quot;</span>: <span class="s2">&quot;Bar&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+<p>Use the <code>state</code> command to query the entire state of a document.</p>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic state kjzl6cwe1jw147ww5d8pswh1hjh686mut8v1br10dar8l9a3n1wf8z38l0bg8qa
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your DocID instead of the DocID included here.</p>
+</div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Output before anchor</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+  <span class="s2">&quot;doctype&quot;</span>: <span class="s2">&quot;tile&quot;</span>,
+  <span class="s2">&quot;content&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;Foo&quot;</span>: <span class="s2">&quot;Bar&quot;</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;metadata&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;schema&quot;</span>: null,
+    <span class="s2">&quot;controllers&quot;</span>: <span class="o">[</span>
+      <span class="s2">&quot;did:key:z6MkfZ6S4NVVTEuts8o5xFzRMR8eC6Y1bngoBQNnXiCvhH8H&quot;</span>
+    <span class="o">]</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;signature&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;anchorStatus&quot;</span>: <span class="s2">&quot;PENDING&quot;</span>,
+  <span class="s2">&quot;log&quot;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;cid&quot;</span>: <span class="s2">&quot;bagcqceranhr345kxf5gb3kwjvvnnefn2krqvhkpnurphqrn3lj773mfszmza&quot;</span>,
+      <span class="s2">&quot;type&quot;</span>: <span class="m">0</span>
+    <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">&quot;anchorScheduledFor&quot;</span>: <span class="s2">&quot;1/24/2021, 11:45:00 AM&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p>Here we can see various information about the document such as <em>content</em>, <em>controllers</em>, and <em>schema</em>. In your output you should see your local DID as the controller, instead of the DID we show here. We can also see the current <em>anchorStatus</em> of our document, and that it has been scheduled to be anchored at 11:45 on the 24<sup>th</sup> of January 2021. Once this anchor is finalized, the state of the document will automatically be updated with a new entry in the log and <em>anchorStatus</em> will be set to <code>ANCHORED</code>.</p>
+</div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Output after anchor</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+  <span class="s2">&quot;doctype&quot;</span>: <span class="s2">&quot;tile&quot;</span>,
+  <span class="s2">&quot;content&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;Foo&quot;</span>: <span class="s2">&quot;Bar&quot;</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;metadata&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;schema&quot;</span>: null,
+    <span class="s2">&quot;controllers&quot;</span>: <span class="o">[</span>
+      <span class="s2">&quot;did:key:z6MkfZ6S4NVVTEuts8o5xFzRMR8eC6Y1bngoBQNnXiCvhH8H&quot;</span>
+    <span class="o">]</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;signature&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;anchorStatus&quot;</span>: <span class="s2">&quot;ANCHORED&quot;</span>,
+  <span class="s2">&quot;log&quot;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;cid&quot;</span>: <span class="s2">&quot;bagcqceranhr345kxf5gb3kwjvvnnefn2krqvhkpnurphqrn3lj773mfszmza&quot;</span>,
+      <span class="s2">&quot;type&quot;</span>: <span class="m">0</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+      <span class="s2">&quot;cid&quot;</span>: <span class="s2">&quot;bafyreig6hostufw42cmz2cnn7hpvb6pau67a2n2syhzej7orqxfymdayyq&quot;</span>,
+      <span class="s2">&quot;type&quot;</span>: <span class="m">2</span>
+    <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">&quot;anchorScheduledFor&quot;</span>: null,
+  <span class="s2">&quot;anchorProof&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;root&quot;</span>: <span class="s2">&quot;bagcqceranhr345kxf5gb3kwjvvnnefn2krqvhkpnurphqrn3lj773mfszmza&quot;</span>,
+    <span class="s2">&quot;txHash&quot;</span>: <span class="s2">&quot;bagjqcgza4xgkpjodtqtgyu2fx6rdr6fb6mhevd5hy4253tl6pjlssidpwaha&quot;</span>,
+    <span class="s2">&quot;chainId&quot;</span>: <span class="s2">&quot;eip155:3&quot;</span>,
+    <span class="s2">&quot;blockNumber&quot;</span>: <span class="m">9527752</span>,
+    <span class="s2">&quot;blockTimestamp&quot;</span>: <span class="m">1611485094</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<div class="admonition quote">
+<p>This output was seen after the anchor has been created. The document state has now shifted <em>anchorStatus</em> to <code>ANCHORED</code>. You can also see that the log contains one more entry.</p>
+</div>
+</div>
+</div>
+<h2 id="update-a-document"><strong>Update a document</strong><a class="headerlink" href="#update-a-document" title="Permanent link">&para;</a></h2>
+<p>Use the <code>change</code> command to update a document. Your DID must be the controller of the document in order to update it.</p>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic change kjzl6cwe1jw147ww5d8pswh1hjh686mut8v1br10dar8l9a3n1wf8z38l0bg8qa --content <span class="s1">&#39;{</span>
+<span class="s1">    &quot;Foo&quot;: &quot;Baz&quot;</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your DocID instead of the DocID included here.</p>
+</div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+  <span class="s2">&quot;Foo&quot;</span>: <span class="s2">&quot;Baz&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+<details class="info"><summary>More options</summary><p>Currently you can change <em>content</em>, <em>controllers</em>, and <em>schema</em> using the CLI. Run <code>ceramic change -h</code> for more information.</p>
+</details>
+<h2 id="create-a-schema"><strong>Create a schema</strong><a class="headerlink" href="#create-a-schema" title="Permanent link">&para;</a></h2>
+<p>In Ceramic you can enforce that documents adhere to a specified schema. The schemas themselves are Ceramic documents where the content is a <a href="https://json-schema.org/" target="_blank">json-schema</a>. For example we can create a schema that requires a document to have a <em>title</em> and <em>message</em>.</p>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic create tile --content <span class="s1">&#39; {                                            </span>
+<span class="s1">   &quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,</span>
+<span class="s1">   &quot;title&quot;: &quot;Reward&quot;,</span>
+<span class="s1">   &quot;type&quot;: &quot;object&quot;,</span>
+<span class="s1">   &quot;properties&quot;: {</span>
+<span class="s1">     &quot;title&quot;: { &quot;type&quot;: &quot;string&quot; },</span>
+<span class="s1">     &quot;message&quot;: { &quot;type&quot;: &quot;string&quot; }</span>
+<span class="s1">   },</span>
+<span class="s1">   &quot;required&quot;: [</span>
+<span class="s1">     &quot;message&quot;,</span>
+<span class="s1">     &quot;title&quot;</span>
+<span class="s1">   ]</span>
+<span class="s1"> }&#39;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>DocID<span class="o">(</span>kjzl6cwe1jw1472as4pj3b3ahqmkokbmwc7jchqcob6pcixcoo4kxq6ls8uuxgb<span class="o">)</span>
+<span class="o">{</span>
+  <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;object&quot;</span>,
+  <span class="s2">&quot;title&quot;</span>: <span class="s2">&quot;Reward&quot;</span>,
+  <span class="s2">&quot;</span><span class="nv">$schema</span><span class="s2">&quot;</span>: <span class="s2">&quot;http://json-schema.org/draft-07/schema#&quot;</span>,
+  <span class="s2">&quot;required&quot;</span>: <span class="o">[</span>
+    <span class="s2">&quot;message&quot;</span>,
+    <span class="s2">&quot;title&quot;</span>
+  <span class="o">]</span>,
+  <span class="s2">&quot;properties&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;title&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;string&quot;</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;message&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;string&quot;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="create-a-document-that-uses-a-schema"><strong>Create a document that uses a schema</strong><a class="headerlink" href="#create-a-document-that-uses-a-schema" title="Permanent link">&para;</a></h2>
+<p>First, use the <code>commits</code> command to list the commitIDs contained in the schema document. When creating a document that uses this schema, we need to use a commitID instead of the DocID to enforce that we are using a specific version of the schema since the schema document is mutable and can be updated.</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic commits kjzl6cwe1jw1472as4pj3b3ahqmkokbmwc7jchqcob6pcixcoo4kxq6ls8uuxgb
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your DocID instead of the DocID included here.</p>
+</div>
+</div>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">[</span>
+  <span class="s2">&quot;k3y52l7qbv1frxu8co1hjrivem5cj2oiqtytlku3e4vjo92l67fkkvu6ywuzfxvy8&quot;</span>
+<span class="o">]</span>
+</code></pre></div>
+</div>
+</div>
+<p>If a document contains multiple commits and you're not sure which one you want, use the <code>show</code> command to show the content of the document at the given commit.</p>
+<p>Once you retrieve the desired commit, you can now create a document that is enforced to conform to this version of the schema. Use the <code>create</code> command and pass the <code>--schema</code> option along with your commitID.</p>
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic ceramic create tile --content <span class="s1">&#39;{</span>
+<span class="s1">    &quot;title&quot;: &quot;My first document with schema&quot;,</span>
+<span class="s1">    &quot;message&quot;: &quot;Hello World&quot;</span>
+<span class="s1">  }&#39;</span> --schema k3y52l7qbv1frxu8co1hjrivem5cj2oiqtytlku3e4vjo92l67fkkvu6ywuzfxvy8
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your commitID instead of the commitID included here.</p>
+</div>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>DocID<span class="o">(</span>kjzl6cwe1jw149tvfh6otqfzd2hfknkifb1z2lakozkicvau0xldzzdzwfbsztj<span class="o">)</span>
+<span class="o">{</span>
+  <span class="s2">&quot;title&quot;</span>: <span class="s2">&quot;My first document with schema&quot;</span>,
+  <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello World&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="query-the-document-you-created"><strong>Query the document you created</strong><a class="headerlink" href="#query-the-document-you-created" title="Permanent link">&para;</a></h2>
+<p>Use the <code>state</code> command to query the state of the document we just created. We can see that the schema is set to the correct commitID.</p>
+<div class="tabbed-set" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Command</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>$ ceramic state kjzl6cwe1jw14b5sr79heovz7fziz4dxcn8upx3bcesriloqcui137k6rq6g2mn
+</code></pre></div>
+<div class="admonition quote">
+<p>You should use your DocID instead of the DocID included here.</p>
+</div>
+</div>
+<input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><label for="__tabbed_8_2">Output</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="o">{</span>
+  <span class="s2">&quot;doctype&quot;</span>: <span class="s2">&quot;tile&quot;</span>,
+  <span class="s2">&quot;content&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;title&quot;</span>: <span class="s2">&quot;My first document with schema&quot;</span>,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello World&quot;</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;metadata&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;schema&quot;</span>: <span class="s2">&quot;k3y52l7qbv1frxu8co1hjrivem5cj2oiqtytlku3e4vjo92l67fkkvu6ywuzfxvy8&quot;</span>,
+    <span class="s2">&quot;controllers&quot;</span>: <span class="o">[</span>
+      <span class="s2">&quot;did:key:z6MkfZ6S4NVVTEuts8o5xFzRMR8eC6Y1bngoBQNnXiCvhH8H&quot;</span>
+    <span class="o">]</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;signature&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;anchorStatus&quot;</span>: <span class="s2">&quot;PENDING&quot;</span>,
+  <span class="s2">&quot;log&quot;</span>: <span class="o">[</span>
+    <span class="o">{</span>
+      <span class="s2">&quot;cid&quot;</span>: <span class="s2">&quot;bagcqcera5qxg5zabjjvwpcbia6c3t6vebgo4brgmsagxezdjgk4vxnzwb5hq&quot;</span>,
+      <span class="s2">&quot;type&quot;</span>: <span class="m">0</span>
+    <span class="o">}</span>
+  <span class="o">]</span>,
+  <span class="s2">&quot;anchorScheduledFor&quot;</span>: <span class="s2">&quot;1/13/2021, 1:45:00 PM&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+</div>
+</div>
+<h1 id="thats-it"><strong>That's it!</strong><a class="headerlink" href="#thats-it" title="Permanent link">&para;</a></h1>
+<p>Congratulations on completing this tutorial! You're well on your way to becoming a Ceramic developer. Now let's <a href="../installation/">install Ceramic in your project →</a>
+</br>
+</br>
+</br></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+        
+          <a href="../installation/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installation
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Ceramic is open sourced under MIT and Apache 2
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/ceramicnetwork/ceramic" target="_blank" class="md-footer-social__link fa fa-"></a>
+    
+      <a href="https://twitter.com/ceramicnetwork" target="_blank" class="md-footer-social__link fa fa-"></a>
+    
+      <a href="http://github.com/ceramicnetwork/ceramic" class="md-footer-social__link fa" target="_blank">
+        <img src="../../images/icon-github-white.svg" style="margin-left:10px" width="20px">
+      </a>
+      <a href="http://chat.ceramic.network" class="md-footer-social__link fa" target="_blank">
+        <img src="../../images/icon-discord-white.svg" style="margin-left:10px" width="17px">
+      </a>
+      <a href="http://twitter.com/ceramicnetwork" class="md-footer-social__link fa" target="_blank">
+        <img src="../../images/icon-twitter-white.svg" style="margin-left:10px" width="20px">
+      </a>
+      <a href="http://www.youtube.com/channel/UCgCLq5dx7sX-yUrrEbtYqVw" class="md-footer-social__link fa" target="_blank">
+        <img src="../../images/icon-youtube-white.svg" style="margin-left:10px" width="22px">
+      </a>
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.instant', 'navigation.tabs', 'navigation.expand', 'navigation.sections', 'header.autohide'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesort/5.2.1/tablesort.min.js"></script>
+      
+        <script src="../../javascripts/tables.js"></script>
+      
+    
+  </body>
+</html>
